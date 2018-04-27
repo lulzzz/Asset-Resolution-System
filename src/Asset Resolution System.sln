@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ars.lib", "ars.lib\ars.lib.csproj", "{DDE7A7BD-0D79-48F5-8F70-1BE3075FEB61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ars.engine", "ars.engine\ars.engine.csproj", "{0AEAC044-FBBE-4568-A74F-F3D1285FCFA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ars.tests", "ars.tests\ars.tests.csproj", "{E365D6FA-85B0-45FC-89BD-BCDBCF01B807}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDE7A7BD-0D79-48F5-8F70-1BE3075FEB61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE7A7BD-0D79-48F5-8F70-1BE3075FEB61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE7A7BD-0D79-48F5-8F70-1BE3075FEB61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE7A7BD-0D79-48F5-8F70-1BE3075FEB61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AEAC044-FBBE-4568-A74F-F3D1285FCFA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AEAC044-FBBE-4568-A74F-F3D1285FCFA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AEAC044-FBBE-4568-A74F-F3D1285FCFA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AEAC044-FBBE-4568-A74F-F3D1285FCFA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E365D6FA-85B0-45FC-89BD-BCDBCF01B807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E365D6FA-85B0-45FC-89BD-BCDBCF01B807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E365D6FA-85B0-45FC-89BD-BCDBCF01B807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E365D6FA-85B0-45FC-89BD-BCDBCF01B807}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2262264B-1362-48D3-937A-86AFB70CC6CE}
+	EndGlobalSection
+EndGlobal
