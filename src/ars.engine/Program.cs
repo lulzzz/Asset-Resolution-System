@@ -4,30 +4,38 @@ using System.Diagnostics;
 using System.IO;
 using Topshelf;
 using System.Configuration;
-
+using System.Collections.Specialized;
+using Autofac;
+using ars.lib.Common.Utils;
+using ars.lib.Common.Interfaces;
 
 namespace ars.engine
 {
     class Program
     {
+        private static readonly IContainer Container = lib.Common.Utils.Container.Initialize();
         static void Main(string[] args)
         {
             Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
             Serilog.Debugging.SelfLog.Enable(s => Trace.WriteLine($"SERILOG ERROR: {s}"));
 
-            if (Convert.ToBoolean(ConfigurationManager.AppSettings["useLogFile"]))
+            var scope = Container.BeginLifetimeScope();
+            var settings = scope.Resolve<ISettings>();
+
+            if (Convert.ToBoolean(settings.UseLogFile))
             {
                 Log.Logger = new LoggerConfiguration()
-                    .ReadFrom.AppSettings()
+                    .MinimumLevel.Debug()
                     .WriteTo.RollingFile(@".\Logs\log-{Date}.txt")
+                    .WriteTo.ColoredConsole()
                     .Enrich.FromLogContext()
                     .CreateLogger();
             }
             else
             {
                 Log.Logger = new LoggerConfiguration()
-                    .ReadFrom.AppSettings()
-                    .WriteTo.EventLog(ConfigurationManager.AppSettings["appName"], manageEventSource: true)
+                    .MinimumLevel.Debug()
+                    .WriteTo.EventLog(settings.AppName, manageEventSource: true)
                     .WriteTo.ColoredConsole()
                     .Enrich.FromLogContext()
                     .CreateLogger();
@@ -46,9 +54,9 @@ namespace ars.engine
                 x.UseLinuxIfAvailable();
                 x.StartAutomatically();
                 x.RunAsLocalSystem();
-                x.SetDescription(ConfigurationManager.AppSettings["appDesc"]);
-                x.SetDisplayName(ConfigurationManager.AppSettings["appName"]);
-                x.SetServiceName(ConfigurationManager.AppSettings["appServiceName"]);
+                x.SetDescription(settings.AppDesc);
+                x.SetDisplayName(settings.AppName);
+                x.SetServiceName(settings.AppServiceName);
             });
         }
     }

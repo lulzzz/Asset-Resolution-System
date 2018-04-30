@@ -1,0 +1,6 @@
+﻿{
+    "appName": "Asset Resolution System",
+    "appDesc": "ARS Engine",
+    "appServiceName": "arseng",
+    "useLogFile": true
+}

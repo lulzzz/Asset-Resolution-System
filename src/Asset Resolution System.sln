@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ars.lib", "ars.lib\ars.lib.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ars.engine", "ars.engine\ars.engine.csproj", "{0AEAC044-FBBE-4568-A74F-F3D1285FCFA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ars.tests", "ars.tests\ars.tests.csproj", "{E365D6FA-85B0-45FC-89BD-BCDBCF01B807}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ars.tests", "ars.tests\ars.tests.csproj", "{F8D6980C-FACC-4717-82F4-93866755E1B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{0AEAC044-FBBE-4568-A74F-F3D1285FCFA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AEAC044-FBBE-4568-A74F-F3D1285FCFA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AEAC044-FBBE-4568-A74F-F3D1285FCFA0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E365D6FA-85B0-45FC-89BD-BCDBCF01B807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E365D6FA-85B0-45FC-89BD-BCDBCF01B807}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E365D6FA-85B0-45FC-89BD-BCDBCF01B807}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E365D6FA-85B0-45FC-89BD-BCDBCF01B807}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8D6980C-FACC-4717-82F4-93866755E1B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8D6980C-FACC-4717-82F4-93866755E1B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8D6980C-FACC-4717-82F4-93866755E1B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8D6980C-FACC-4717-82F4-93866755E1B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
