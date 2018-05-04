@@ -11,6 +11,8 @@ namespace ars.lib.Common.Interfaces
         string AppName { get; set; }
         string AppDesc { get; set; }
         string AppServiceName { get; set; }
+        string AppDbPwd { get; set; }
+        string ConfigFile { get; set; }
         bool UseLogFile { get; set; }
     }
 }
