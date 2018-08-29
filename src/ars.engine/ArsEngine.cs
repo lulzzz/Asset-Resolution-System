@@ -4,6 +4,9 @@ using ars.lib.Common.Utils;
 using Serilog;
 using System;
 using System.Diagnostics;
+using SaltwaterTaffy;
+using SaltwaterTaffy.Container;
+using System.Linq;
 
 namespace ars.engine
 {
@@ -17,10 +20,13 @@ namespace ars.engine
             {
                 Log.Information("Starting ARS System ...");
                 
-                db.InitializeDB();
+                //db.InitializeDB();
 
                 arsSystem = ActorSystem.Create("ARS-System");
                 Log.Information("{SysName} started.", arsSystem.Name);
+
+                TestScan();
+
                 return true;
             }
             catch (Exception ex)
@@ -39,6 +45,31 @@ namespace ars.engine
             arsSystem.Terminate();
             Log.CloseAndFlush();
             return true;
+        }
+
+
+        internal void TestScan()
+        {
+            Log.Information("Beginning scan ...");
+            var target = new Target("192.168.1.0/24");
+            ScanResult result = new Scanner(target, ProcessWindowStyle.Hidden).PortScan();
+
+            foreach(Host i in result.Hosts)
+            {
+                Log.Information("Host: {ipAddress}", i.Address);
+
+                foreach (Port j in i.Ports)
+                {
+                    Log.Information("port {portNum} {portService} {portFiltered}", j.PortNumber, "is running " + ((!string.IsNullOrEmpty(j.Service.Name)) ? j.Service.Name : string.Empty), (j.Filtered) ? "is filtered" : string.Empty);                   
+
+                }
+
+                if (i.OsMatches.Any())
+                {
+                    Log.Information("And is probably running {osName}", i.OsMatches.First().Name);
+                }
+
+            }
         }
 
 

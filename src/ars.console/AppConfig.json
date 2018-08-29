@@ -1,0 +1,8 @@
+﻿{
+  "appName": "Asset Resolution System Console",
+  "appDesc": "ARS Console",
+  "appServiceName": "arsconsole",
+  "appDbPwd": "y@m>^9",
+  "configFile": "AppConfig.json",
+  "useLogFile": true
+}
